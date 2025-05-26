@@ -22,20 +22,20 @@ A modern, responsive personal portfolio website built with Jekyll and GitHub Pag
 ## Project Structure
 ```
 portfolio_demo.github.io/
-├── _layouts/           # Jekyll HTML layouts
-├── assets/            # CSS, JS, images
-│   ├── css/          # Stylesheets
-│   ├── js/           # JavaScript files
-│   └── images/       # Site images
-├── services/         # Service subpages
-├── .github/          # GitHub configuration
-│   └── workflows/    # GitHub Actions workflows
-├── about.md         # About page
-├── contact.md       # Contact page
-├── index.md         # Home page
-├── projects.md      # Projects page
-├── services.md      # Main services page
-├── _config.yml      # Jekyll configuration
+├── _layouts/        # Jekyll HTML layouts
+├── assets/          # CSS, JS, images
+│   ├── css/         # Stylesheets
+│   ├── js/          # JavaScript files
+│   └── images/     # Site images
+├── services/       # Service subpages
+├── .github/        # GitHub configuration
+│   └── workflows/  # GitHub Actions workflows
+├── about.md        # About page
+├── contact.md      # Contact page
+├── index.md        # Home page
+├── projects.md     # Projects page
+├── services.md     # Main services page
+├── _config.yml     # Jekyll configuration
 ├── Gemfile         # Ruby dependencies
 └── README.md       # Documentation
 ```
