@@ -13,20 +13,31 @@ A modern, responsive personal portfolio website built with Jekyll and GitHub Pag
 - Contact form and social links
 - Easy customization
 - Built with Jekyll for GitHub Pages
+- Automated CI/CD with GitHub Actions
+  - Test workflow runs on every push and pull request
+  - Automated deployment to GitHub Pages
+  - Dependency caching for faster builds
+  - Jekyll configuration validation
 
 ## Project Structure
 ```
 portfolio_demo.github.io/
 ├── _layouts/           # Jekyll HTML layouts
-├── assets/             # CSS, JS, images
-├── services/           # Service subpages
-├── about.md            # About page
-├── contact.md          # Contact page
-├── index.md            # Home page
-├── projects.md         # Projects page
-├── services.md         # Main services page
-├── _config.yml         # Jekyll configuration
-└── README.md           # This file
+├── assets/            # CSS, JS, images
+│   ├── css/          # Stylesheets
+│   ├── js/           # JavaScript files
+│   └── images/       # Site images
+├── services/         # Service subpages
+├── .github/          # GitHub configuration
+│   └── workflows/    # GitHub Actions workflows
+├── about.md         # About page
+├── contact.md       # Contact page
+├── index.md         # Home page
+├── projects.md      # Projects page
+├── services.md      # Main services page
+├── _config.yml      # Jekyll configuration
+├── Gemfile         # Ruby dependencies
+└── README.md       # Documentation
 ```
 
 ## Getting Started
@@ -50,7 +61,29 @@ bundle exec jekyll serve
 Visit [http://127.0.0.1:4000/](http://127.0.0.1:4000/) in your browser.
 
 ## Deployment
-This site is designed for GitHub Pages. Just push to the `main` branch and your site will be live at:
+This site uses GitHub Actions for automated testing and deployment to GitHub Pages. The workflow includes:
+
+### CI/CD Pipeline
+1. **Test Job**:
+   - Runs on every push and pull request
+   - Validates Jekyll configuration
+   - Checks build process
+   - Ensures critical files are generated
+
+2. **Deploy Job**:
+   - Only runs after successful tests
+   - Builds the site in production mode
+   - Deploys automatically to GitHub Pages
+   - Uses caching for faster builds
+
+### Manual Deploy
+The site deploys automatically on pushes to the `main` branch. You can also trigger a deployment manually:
+1. Go to your repository on GitHub
+2. Navigate to Actions tab
+3. Select "Jekyll site CI/CD"
+4. Click "Run workflow"
+
+Your site will be live at:
 ```
 https://<your-github-username>.github.io/portfolio_demo.github.io/
 ```
